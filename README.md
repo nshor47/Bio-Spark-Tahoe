@@ -4,6 +4,8 @@
 🔍 Project Overview
 This project is part of our data science group work focused on exploring and preprocessing a large-scale gene expression dataset. Specifically, we are working with the TAHOE-100M dataset, which contains transcriptional response profiles from various drug perturbations in different cell types.
 
+How to run:  Simplly download cleaned_Final_Edits_Tahoe_100M_Stream_and_Filter_cellid (1).ipynb and run in google collab. 
+
 📁 Dataset Information
 Name: TAHOE-100M
 

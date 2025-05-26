@@ -4,7 +4,7 @@ Bio-Spark-Tahoe
 
 Project Overview
 
-This milestone builds upon our previous data exploration and preprocessing work on the TAHOE-100M gene expression dataset. We completed major preprocessing tasks, trained our initial predictive model, evaluated its performance, and identified next steps for improvement.
+This milestone builds upon our previous data exploration and preprocessing work on the TAHOE-100M gene expression dataset. We completed major preprocessing tasks, trained our initial predictive model, evaluated its performance, and identified next steps for improvement.  Bio_Spark_major_preprocessing is the file on which the information covered was excuted from.   
 
 📁 Dataset Information
 

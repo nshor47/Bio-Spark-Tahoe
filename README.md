@@ -1,54 +1,89 @@
-# Bio-Spark-Tahoe
+Bio-Spark-Tahoe
 
-📊 Group Project Part 2: Data Exploration
-🔍 Project Overview
-This project is part of our data science group work focused on exploring and preprocessing a large-scale gene expression dataset. Specifically, we are working with the TAHOE-100M dataset, which contains transcriptional response profiles from various drug perturbations in different cell types.
+📊 Group Project Milestone 3: Preprocessing, Model Training & Evaluation
+
+Project Overview
+
+This milestone builds upon our previous data exploration and preprocessing work on the TAHOE-100M gene expression dataset. We completed major preprocessing tasks, trained our initial predictive model, evaluated its performance, and identified next steps for improvement.
 
 📁 Dataset Information
+
 Name: TAHOE-100M
 
 Format: JSONL / CSV
 
-Source: https://huggingface.co/datasets/tahoebio/Tahoe-100M
-
+Source: [Huggingface Dataset Link
+](https://huggingface.co/datasets/tahoebio/Tahoe-100M)
 Size: 100 million samples
 
 Content:
 
 Drug perturbation identifiers
 
-Gene expression values
+Gene expression values (~978 landmark genes)
 
 Cell line identifiers
 
-Metadata fields (e.g., SMILES, concentrations)
+Metadata (e.g., SMILES, concentrations)
 
-📈 Data Exploration Summary
-Initial Filtering: Only records containing valid cell_id values were retained.
+📈 Preprocessing Completed
 
-Observations: After filtering, we observed a significantly reduced but still large dataset with millions of usable records.
+Filtering and Imputation:
 
-Features:
+Retained records with valid cell_id.
 
-High-dimensional gene expression arrays (approximately 978 landmark genes)
+Imputed missing gene expression values with mean/median imputation.
 
-Drug metadata fields such as drug_name, smiles, concentration, and time
+Scaling and Encoding:
 
-Distributions: Distributions of gene expression values and concentration levels were analyzed using histograms and boxplots (see notebook).
+Scaled numerical gene expression features using standardization (mean=0, variance=1).
 
-Missing Data: Rows with missing cell_id or malformed records were discarded during the streaming process.
+Encoded categorical drug metadata using one-hot encoding.
 
-🧪 Preprocessing Strategy
-The dataset preprocessing involved the following:
+Feature Expansion:
 
-Streaming the Dataset: Due to memory limitations, we implemented a streaming method to load and process the dataset in chunks.
+Generated additional features via polynomial (degree=2) and log transformations of selected features.
 
-Filtering: We selected rows with a valid cell_id and discarded broken or irrelevant entries.
+🚀 Model Training
 
-Slicing: The cleaned dataset was split into 5,000 partitioned slices for parallel and incremental downstream processing.
+First Model: Random Forest Regression
 
-This strategy enabled efficient computation and modular analysis in distributed environments such as Google Colab or Spark-based platforms.
+Trained on the processed dataset with an 80-20 train-test split.
 
-📂 Files in This Repository
-clean_Final_Edits_Tahoe_100M_Stream_and_Filter_cellid.ipynb: Jupyter Notebook containing all filtering, streaming, slicing, and visualizations.
+Hyperparameters tuned via grid search.
 
+📊 Model Evaluation
+
+Training Error: RMSE = 0.23
+
+Test Error: RMSE = 0.35
+
+Fitting Analysis:
+
+The model shows signs of slight overfitting, evidenced by lower training error compared to test error.
+
+🔍 Model Performance Insights
+
+Fit in Underfitting/Overfitting Graph:
+
+Slightly in the overfitting region, indicating the model complexity could be slightly reduced or regularization increased.
+
+🛠️ Next Steps
+
+Explore simpler models like Ridge or Lasso regression to mitigate overfitting.
+
+Consider additional dimensionality reduction techniques (e.g., PCA) to improve model generalization.
+
+📂 Files and Notebooks
+
+clean_Final_Edits_Tahoe_100M_Stream_and_Filter_cellid.ipynb: Contains previous filtering and slicing procedures.
+
+Bio_Spark_major_preprocessing.ipynb: Includes completed major preprocessing, model training, and evaluation steps.
+
+📌 Example Predictions
+
+Ground truth vs. predicted gene expression provided in Bio_Spark_major_preprocessing.ipynb for train, validation, and test datasets.
+
+📝 Conclusion
+
+Our initial Random Forest model performs reasonably but exhibits slight overfitting. Future improvements include regularization and exploring simpler linear models to enhance predictive generalization.

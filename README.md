@@ -2,6 +2,8 @@ Bio-Spark-Tahoe
 
 📊 Group Project Milestone 3: Preprocessing, Model Training & Evaluation
 
+How to Run youself-  Simply download the Bio_Spark_major_preprocessing.ipynb and run it in google collab.
+
 Project Overview
 
 This milestone builds upon our previous data exploration and preprocessing work on the TAHOE-100M gene expression dataset. We completed major preprocessing tasks, trained our initial predictive model, evaluated its performance, and identified next steps for improvement.  Bio_Spark_major_preprocessing is the file on which the information covered was excuted from.   

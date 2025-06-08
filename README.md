@@ -1,6 +1,6 @@
 Bio-Spark-Tahoe
 
-📊 Group Project Milestone 3: Preprocessing, Model Training & Evaluation
+📊 Group Project Milestone 4: 2nd Model and Final Submission
 
 How to Run
 

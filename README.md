@@ -1,6 +1,6 @@
 # Bio-Spark-Tahoe
 
-📊 Group Project Part 2: Data Exploration
+📊 Group Project Part 4: 2nd Model and Final Submission
 🔍 Project Overview
 This project is part of our data science group work focused on exploring and preprocessing a large-scale gene expression dataset. Specifically, we are working with the TAHOE-100M dataset, which contains transcriptional response profiles from various drug perturbations in different cell types.
 
